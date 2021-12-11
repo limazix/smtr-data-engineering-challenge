@@ -17,3 +17,11 @@ class ConfigDriverTest(TestCase):
         LoggerDeriver()
         mock_fileConfig.assert_called_once_with("logging.ini")
         mock_getLogger.assert_called_once_with("console")
+
+    def test_singleton(self):
+        """
+        it should be a singleton class
+        """
+        driver1 = LoggerDeriver()
+        driver2 = LoggerDeriver()
+        self.assertEqual(driver1, driver2)
