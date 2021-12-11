@@ -2,7 +2,7 @@
 
 from prefect.core.task import Task
 
-from ..driver.logger_driver import LoggerDriver
+from ..driver.config_driver import ConfigDriver
 
 
 class ABSTask(Task):
@@ -12,10 +12,9 @@ class ABSTask(Task):
         It will follow the Template Method design pattern
 
     Attributes:
-        logger (Logger): instance for the logger
+        config (ConfigDriver): instance for the project configuration
     """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        logger_driver = LoggerDriver()
-        self.logger = logger_driver.logger_console
+        self.config = ConfigDriver()

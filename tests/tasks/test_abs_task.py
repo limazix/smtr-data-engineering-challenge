@@ -1,7 +1,6 @@
 from unittest import TestCase
 
-from logging import Logger
-
+from tools.driver.config_driver import ConfigDriver
 from tools.tasks.abs_task import ABSTask
 
 
@@ -11,6 +10,6 @@ class ABSTaskTest(TestCase):
 
     def test_setup(self):
         """
-        it should have a logger instance as an attribute
+        it should have a config instance as an attribute
         """
-        self.assertIsInstance(self.task.logger, Logger)
+        self.assertIsInstance(self.task.config, ConfigDriver)
