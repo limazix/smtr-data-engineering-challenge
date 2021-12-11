@@ -2,6 +2,7 @@
 
 from configparser import ConfigParser
 
+
 class ConfigDriver:
     """ConfigDriver
 
@@ -9,7 +10,7 @@ class ConfigDriver:
 
     Attributes:
         configr (ConfigParser): instance for the configuration parser
-        
+
     """
 
     def __init__(self):
