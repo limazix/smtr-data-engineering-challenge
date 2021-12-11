@@ -4,7 +4,7 @@ import logging
 import logging.config
 
 
-class LoggerDeriver:
+class LoggerDriver:
     """Class designed to access and handle logger operations
 
     Note:
@@ -12,7 +12,7 @@ class LoggerDeriver:
         or it'll create a new logger instance every time it's called
 
     Atributes:
-        _instance (LoggerDriver):
+        _instance (LoggerDriver): reference to itself for singleton purpose
         logger_console (Logger): instance of a logger to write its outputs in
         the console
     """
@@ -25,5 +25,5 @@ class LoggerDeriver:
 
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super(LoggerDeriver, cls).__new__(cls)
+            cls._instance = super(LoggerDriver, cls).__new__(cls)
         return cls._instance

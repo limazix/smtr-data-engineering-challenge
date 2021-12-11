@@ -3,7 +3,7 @@ from unittest import TestCase, mock
 import logging
 import logging.config
 
-from tools.driver.logger_driver import LoggerDeriver
+from tools.driver.logger_driver import LoggerDriver
 
 
 class ConfigDriverTest(TestCase):
@@ -14,7 +14,7 @@ class ConfigDriverTest(TestCase):
         it should setup the logger driver using the logging.ini file
         and instanciate the logger
         """
-        LoggerDeriver()
+        LoggerDriver()
         mock_fileConfig.assert_called_once_with("logging.ini")
         mock_getLogger.assert_called_once_with("console")
 
@@ -22,6 +22,6 @@ class ConfigDriverTest(TestCase):
         """
         it should be a singleton class
         """
-        driver1 = LoggerDeriver()
-        driver2 = LoggerDeriver()
+        driver1 = LoggerDriver()
+        driver2 = LoggerDriver()
         self.assertEqual(driver1, driver2)
