@@ -15,4 +15,4 @@ class ConfigDriver:
 
     def __init__(self):
         self.configr = ConfigParser()
-        self.configr.read('config.ini')
+        self.configr.read("config.ini")
