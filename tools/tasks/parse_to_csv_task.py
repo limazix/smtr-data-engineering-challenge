@@ -18,8 +18,29 @@ class ParseToCSVTask(ABSTask):
         Returns:
             str: a string with all column names separated by comma
         """
-        headers = sorted(data.keys())
+        headers = data.keys()
         return ",".join(headers)
+
+    def build_body(self, data: list, headers: list):
+        """
+        Method used to build the csv body with the buses status data
+
+        Attributes:
+            data (list): all buses status
+            headers (list): sorted csv headers
+
+        Returns:
+            str: a string with all buses status contents
+        """
+        body = ""
+
+        for status in data:
+            row = []
+            for header in headers:
+                row.append(str(status[header]))
+            body += ",".join(row) + "\n"
+
+        return body
 
     def run(self, data: list):
         """
