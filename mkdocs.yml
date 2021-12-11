@@ -1,0 +1,26 @@
+site_name: Template Python Project
+site_url: https://limazix.github.io/template-python-project
+site_author: Bruno Lima Cardoso <blimacardoso@gmail.com>
+
+# Repository
+repo_name: template-python-project
+repo_url: https://github.com/limazix/template-python-project
+edit_uri: edit/main/docs
+docs_dir: docs
+
+plugins:
+    - awesome-pages
+    - search
+
+theme:
+  name: readthedocs
+
+nav:
+- Home: README.md
+- API: overview.md
+- Coverage: coverage.md
+
+plugins:
+- coverage:
+    page_name: coverage  # default
+    html_report_dir: htmlcov  # default

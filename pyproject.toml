@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "template-python-project"
+version = "0.1.0"
+description = "This is a Github template for projects in python"
+authors = ["Bruno Lima Cardoso <blimacardoso@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pytest-cov = "^3.0.0"
+pytest-xdist = "^2.4.0"
+flake8 = "^4.0.1"
+black = "^21.12b0"
+commitizen = "^2.20.0"
+lazydocs = "^0.4.8"
+mkdocs = "^1.2.3"
+mkdocs-awesome-pages-plugin = "^2.6.1"
+mkdocs-coverage = "^0.2.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
