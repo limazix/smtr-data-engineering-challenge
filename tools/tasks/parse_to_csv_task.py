@@ -19,7 +19,7 @@ class ParseToCSVTask(ABSTask):
             str: a string with all column names separated by comma
         """
         headers = data.keys()
-        return ",".join(headers)
+        return ",".join(headers) + "\n", headers
 
     def build_body(self, data: list, headers: list):
         """
@@ -42,6 +42,16 @@ class ParseToCSVTask(ABSTask):
 
         return body
 
+    def write_csv(self, csv: str):
+        """
+        Method used to create a csv file with all buses status
+
+        Attributes:
+            csv (srt): buses status data organized as csv structure
+        """
+        with open("data.csv", "w+") as f:
+            f.write(csv)
+
     def run(self, data: list):
         """
         Method used to control the transformation process
@@ -49,4 +59,7 @@ class ParseToCSVTask(ABSTask):
         Attributes:
             data (list): list of all buses status
         """
-        pass
+        header, headers = self.build_header(data)
+        body = self.build_body(data, headers)
+        csv = header + body
+        self.write_csv(csv)
