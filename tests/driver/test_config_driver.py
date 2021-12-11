@@ -1,31 +1,31 @@
+from unittest import TestCase, mock
+
 from configparser import ConfigParser
-from unittest import TestCase
 
 from tools.driver.config_driver import ConfigDriver
 
 
 class ConfigDriverTest(TestCase):
-    def load_config_file(self) -> None:
-        file = open("config.ini", "r")
-        self.config = [line.replace("\n", "") for line in file.readlines()]
-        file.close()
-
     def setUp(self) -> None:
         self.driver = ConfigDriver()
-        self.load_config_file()
 
-    def test_setup(self):
+    @mock.patch.object(ConfigParser, "read")
+    def test_setup(self, mock_read):
         """
         it should setup the config parser using the config.ini file and
         store it in the configr variable
         """
-        for section in self.driver.configr.sections():
-            self.assertIn("[{}]".format(section), self.config)
+        ConfigDriver()
         self.assertIsInstance(self.driver.configr, ConfigParser)
+        mock_read.assert_called_once_with("config.ini")
 
     def test_get_datasouece_url(self):
         """
         it should return the datasource url as a string
         """
-        url = self.config[1].split("=")[1]
-        self.assertEqual(url, self.driver.get_datasource_url())
+        with mock.patch.object(ConfigParser, "get") as mock_get:
+            self.driver.get_datasource_url()
+            mock_get.assert_called_once_with("datasource", "DATASOURCE_URL")
+
+        url = self.driver.get_datasource_url()
+        self.assertIsInstance(url, str)
