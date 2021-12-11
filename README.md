@@ -1,26 +1,22 @@
-# Template Python Project [![Pipeline](https://github.com/limazix/template-python-project/actions/workflows/main.yml/badge.svg)](https://github.com/limazix/template-python-project/actions/workflows/main.yml) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+# SMTR: Data Engineering Challenge [![Pipeline](https://github.com/limazix/smtr-data-engineering-challenge/actions/workflows/main.yml/badge.svg)](https://github.com/limazix/smtr-data-engineering-challenge/actions/workflows/main.yml) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-### Requirements
+## <a id="overview"/> Overview
+
+This project aims to help the SMTR challenge for data engineering on buses data lake pipeline modeling and creation.
+
+### <a id="requirements"/> Requirements
 
 - [Python](https://python.org) **(v3.7+)**
 - [Poetry](https://python-poetry.org/) **(v1.1+)**
 - [Makefile](https://makefiletutorial.com/)
 
-### Documentation
+### <a id="documentation"/> Documentation
 
 The API documentation will be automatically generated on deploy stage at master merge operation by the CI tool. It uses the package [Lazydocs](https://pypi.org/project/lazydocs/) to convert all Docstrings from the scripts at tools folder to Markdown and store the output into docs folder. After, it uses package [Mkdocs](https://www.mkdocs.org/) to generate the static site and publish it as a Github page.
 
-## Usage
+## <a id="usage"/> Usage
 
-### Rename
-
-The first step to use this repository is tochange the names and paths from the following files:
-- README.md
-- Makefile
-- mkdocs.yml
-- pyproject.toml
-
-### Tests
+### <a id="tests"/> Tests
 
 Run tests only one time
 ```sh

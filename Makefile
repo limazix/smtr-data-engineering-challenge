@@ -6,7 +6,7 @@ PYTHON_TESTS=tests
 PYTHON_SCRIPTS=$(PYTHON_TOOLS) $(PYTHON_TESTS)
 
 DOCS_PATH=./docs
-REPO_URL="https://github.com/limazix/template-python-project"
+REPO_URL="https://github.com/limazix/smtr-data-engineering-challenge"
 
 commit:
 	@git add --interactive

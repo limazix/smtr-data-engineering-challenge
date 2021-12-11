@@ -1,10 +1,10 @@
-site_name: Template Python Project
-site_url: https://limazix.github.io/template-python-project
+site_name: SMTR Data Engineering Challenge
+site_url: https://limazix.github.io/smtr-data-engineering-challenge
 site_author: Bruno Lima Cardoso <blimacardoso@gmail.com>
 
 # Repository
-repo_name: template-python-project
-repo_url: https://github.com/limazix/template-python-project
+repo_name: smtr-data-engineering-challenge
+repo_url: https://github.com/limazix/smtr-data-engineering-challenge
 edit_uri: edit/main/docs
 docs_dir: docs
 

@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "template-python-project"
+name = "smtr-data-engineering-challenge"
 version = "0.1.0"
-description = "This is a Github template for projects in python"
+description = "This project aims to help the SMTR challenge for data engineering on buses data lake pipeline modeling and creation."
 authors = ["Bruno Lima Cardoso <blimacardoso@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
