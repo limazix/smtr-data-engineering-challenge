@@ -18,5 +18,9 @@ class LoadBusesStatusTask(ABSTask):
         Returns:
             list: All buses status
         """
-        response = requests.get(self.config.get_datasource_url())
-        return response.json()
+        try:
+            response = requests.get(self.config.get_datasource_url())
+            response.raise_for_status()
+            return response.json()
+        except Exception as err:
+            self.logger.error(err.strerror)
