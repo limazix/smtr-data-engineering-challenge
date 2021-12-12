@@ -9,6 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.7"
 prefect = "^0.15.10"
+google-cloud-storage = "^1.43.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
