@@ -19,9 +19,11 @@ class SendToStorageTask(ABSTask):
             source_file_name (str): Local file path and name
             destination_blob_name (str): Google Storage's object identification
         """
+        try:
+            storage_client = storage.Client()
+            bucket = storage_client.bucket(bucket_name)
+            blob = bucket.blob(destination_blob_name)
 
-        storage_client = storage.Client()
-        bucket = storage_client.bucket(bucket_name)
-        blob = bucket.blob(destination_blob_name)
-
-        blob.upload_from_filename(source_file_name)
+            blob.upload_from_filename(source_file_name)
+        except Exception as err:
+            self.logger.error(err)
