@@ -59,7 +59,10 @@ class ParseToCSVTask(ABSTask):
         Attributes:
             data (list): list of all buses status
         """
-        header, headers = self.build_header(data)
+        if len(data) == 0:
+            return
+
+        header, headers = self.build_header(data[0])
         body = self.build_body(data, headers)
         csv = header + body
         self.write_csv(csv)
