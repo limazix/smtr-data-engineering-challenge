@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  <meta name="author" content="Bruno Lima Cardoso <blimacardoso@gmail.com>">
+  <link rel="canonical" href="https://limazix.github.io/smtr-data-engineering-challenge/">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>SMTR Data Engineering Challenge</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "README.md";
+    var mkdocs_page_url = "/smtr-data-engineering-challenge/";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> SMTR Data Engineering Challenge</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview"> Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#requirements"> Requirements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation"> Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage"> Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration"> Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run"> Run</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tests"> Tests</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commits"> Commits</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="overview/">API</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="coverage/">Coverage</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">SMTR Data Engineering Challenge</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/limazix/smtr-data-engineering-challenge/edit/main/docs/README.md"> Edit on smtr-data-engineering-challenge</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="smtr-data-engineering-challenge">SMTR: Data Engineering Challenge <a href="https://github.com/limazix/smtr-data-engineering-challenge/actions/workflows/main.yml"><img alt="Pipeline" src="https://github.com/limazix/smtr-data-engineering-challenge/actions/workflows/main.yml/badge.svg" /></a> <a href="http://commitizen.github.io/cz-cli/"><img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" /></a></h1>
+<h2 id="overview"><a id="overview"/> Overview</h2>
+<p>This project aims to help the SMTR challenge for data engineering on buses data lake pipeline modeling and creation.</p>
+<h3 id="requirements"><a id="requirements"/> Requirements</h3>
+<ul>
+<li><a href="https://python.org">Python</a> <strong>(v3.7+)</strong></li>
+<li><a href="https://python-poetry.org/">Poetry</a> <strong>(v1.1+)</strong></li>
+<li><a href="https://makefiletutorial.com/">Makefile</a></li>
+</ul>
+<h3 id="documentation"><a id="documentation"/> Documentation</h3>
+<p>The API documentation will be automatically generated on deploy stage at master merge operation by the CI tool. It uses the package <a href="https://pypi.org/project/lazydocs/">Lazydocs</a> to convert all Docstrings from the scripts at tools folder to Markdown and store the output into docs folder. After, it uses package <a href="https://www.mkdocs.org/">Mkdocs</a> to generate the static site and publish it as a Github page.</p>
+<h2 id="usage"><a id="usage"/> Usage</h2>
+<h3 id="configuration"><a id="configuration"> Configuration</h3>
+<p>The <code>config.ini</code> file store the static variables for application execution.</p>
+<h3 id="run"><a id="run"/> Run</h3>
+<p>Run the application</p>
+<pre><code class="language-sh">make run
+</code></pre>
+<h3 id="tests"><a id="tests"/> Tests</h3>
+<p>Run tests only one time</p>
+<pre><code class="language-sh">make test
+</code></pre>
+<p>Run tests with watch function enabled</p>
+<pre><code class="language-sh">make test-watch
+</code></pre>
+<h3 id="commits"><a id="commits"/> Commits</h3>
+<p>This project uses the <a href="http://semver.org">Semantic Version</a> pattern to generate the package release and it changelogs. To make it work properly, it implement a different flow of actions for commits.</p>
+<pre><code class="language-sh">make commit # start the commit pipeline
+</code></pre>
+<p>The commit pipeline is supported by the <a href="https://commitizen-tools.github.io/commitizen/">Commitizen</a> module. The first one is a cli tool that guide the devloper through the commit pipeline by inquiring for what need to be done. And the second one check if the generated commit follows the <a href="http://semver.org">Semantic Version</a> pattern.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview/" class="btn btn-neutral float-right" title="API">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.2.3
+Build Date UTC : 2021-12-14 02:46:14.341431+00:00
+-->
