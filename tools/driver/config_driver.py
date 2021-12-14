@@ -16,10 +16,18 @@ class ConfigDriver:
         self.configr.read("config.ini")
 
     def get_datasource_url(self) -> str:
-        """This method is used to get the datasource url from the configuration file
+        """Method used to get the datasource url from the configuration file
 
         Returns:
             srt: The datasource url
 
         """
         return self.configr.get("datasource", "DATASOURCE_URL")
+
+    def get_bucket_name(self) -> str:
+        """Method used to get the storage bucket name from the configuration file
+
+        Returns:
+            str: the storage bucket name
+        """
+        return self.configr.get("storage", "bucket")

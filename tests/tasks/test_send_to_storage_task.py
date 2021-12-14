@@ -19,6 +19,6 @@ class SendToStorageTaskTest(TestCase):
         it should rise an exception if the file path not exists
         """
         with mock.patch.object(self.task.logger, "error") as mock_logger_error:
-            self.task.run("some-bucket", "missing.csv", "blob-destination")
+            self.task.run("missing.csv")
             self.assertRaises(FileNotFoundError)
             mock_logger_error.assert_called_once()

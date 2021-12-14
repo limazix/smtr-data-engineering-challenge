@@ -13,10 +13,10 @@ parse_to_csv_task = ParseToCSVTask()
 send_to_storage_task = SendToStorageTask()
 
 load_edge = Edge(load_buses_status_task, parse_to_csv_task, key="data")
-
+parse_edge = Edge(parse_to_csv_task, send_to_storage_task, key="file_name")
 
 Flow(
     name="StoreBusesStatus",
-    edges=[load_edge],
-    tasks=[load_buses_status_task, parse_to_csv_task],
+    edges=[load_edge, parse_edge],
+    tasks=[load_buses_status_task, parse_to_csv_task, send_to_storage_task],
 ).run()

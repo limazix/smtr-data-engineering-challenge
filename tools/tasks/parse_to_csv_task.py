@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from datetime import datetime
+
 from .abs_task import ABSTask
 
 
@@ -42,22 +44,32 @@ class ParseToCSVTask(ABSTask):
 
         return body
 
-    def write_csv(self, csv: str):
+    def write_csv(self, csv: str) -> str:
         """
         Method used to create a csv file with all buses status
 
         Attributes:
             csv (srt): buses status data organized as csv structure
+
+        Returns:
+            str: name of the saved file
         """
-        with open("data.csv", "w+") as f:
+
+        file_name = "{}-status.csv".format(datetime.now())
+        with open(file_name, "w+") as f:
             f.write(csv)
 
-    def run(self, data: list):
+        return file_name
+
+    def run(self, data: list) -> str:
         """
         Method used to control the transformation process
 
         Attributes:
             data (list): list of all buses status
+
+        Returns:
+            str: the file name after saved
         """
         if len(data) == 0:
             return
@@ -65,4 +77,4 @@ class ParseToCSVTask(ABSTask):
         header, headers = self.build_header(data[0])
         body = self.build_body(data, headers)
         csv = header + body
-        self.write_csv(csv)
+        return self.write_csv(csv)
