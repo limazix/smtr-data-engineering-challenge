@@ -8,6 +8,9 @@ PYTHON_SCRIPTS=$(PYTHON_TOOLS) $(PYTHON_TESTS)
 DOCS_PATH=./docs
 REPO_URL="https://github.com/limazix/smtr-data-engineering-challenge"
 
+run:
+	@$(PYTHON_RUNNER) python -m tools.flow
+
 commit: lint
 	@git add --interactive
 	@$(PYTHON_RUNNER) cz commit

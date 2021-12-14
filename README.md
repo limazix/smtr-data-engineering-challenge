@@ -16,6 +16,17 @@ The API documentation will be automatically generated on deploy stage at master 
 
 ## <a id="usage"/> Usage
 
+### <a id="configuration"> Configuration
+
+The `config.ini` file store the static variables for application execution.
+
+### <a id="run"/> Run
+
+Run the application
+```sh
+make run
+```
+
 ### <a id="tests"/> Tests
 
 Run tests only one time
