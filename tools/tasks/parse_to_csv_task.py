@@ -6,13 +6,10 @@ from .abs_task import ABSTask
 
 
 class ParseToCSVTask(ABSTask):
-    """
-    Class designed to transform the JSON data into a CSV file
-    """
+    """Class designed to transform the JSON data into a CSV file"""
 
     def build_header(self, data: dict):
-        """
-        Method used to build the csv header
+        """Method used to build the csv header
 
         Attributes:
             data (dict): dictionary with a single bus status
@@ -24,8 +21,7 @@ class ParseToCSVTask(ABSTask):
         return ",".join(headers) + "\n", headers
 
     def build_body(self, data: list, headers: list):
-        """
-        Method used to build the csv body with the buses status data
+        """Method used to build the csv body with the buses status data
 
         Attributes:
             data (list): all buses status
@@ -45,8 +41,7 @@ class ParseToCSVTask(ABSTask):
         return body
 
     def write_csv(self, csv: str) -> str:
-        """
-        Method used to create a csv file with all buses status
+        """Method used to create a csv file with all buses status
 
         Attributes:
             csv (srt): buses status data organized as csv structure
@@ -62,8 +57,7 @@ class ParseToCSVTask(ABSTask):
         return file_name
 
     def run(self, data: list) -> str:
-        """
-        Method used to control the transformation process
+        """Method used to control the transformation process
 
         Attributes:
             data (list): list of all buses status

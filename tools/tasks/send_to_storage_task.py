@@ -12,8 +12,7 @@ class SendToStorageTask(ABSTask):
     """
 
     def run(self, file_name):
-        """
-        Method used to uploads a file to the bucket
+        """Method used to uploads a file to the bucket
 
         Attributes:
             file_name (str): Local file path and name
